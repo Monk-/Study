@@ -54,7 +54,8 @@ public class MissedSignals {
     }
 
 
-    /* Signal is sent by wrongSignaller, but waiter never gets it */
+    /* Signal is sent by correctSignaler and predicate is changed,
+    correctWaiter checks predicate and don't even go on a waiting queue just goes with carrying on it's task*/
     static class CorrectSendingSignal {
         final Lock lock = new ReentrantLock();
         final Condition condition = lock.newCondition();

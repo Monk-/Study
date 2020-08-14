@@ -71,7 +71,6 @@ public class MissedSignals {
         });
 
         Thread correctWaiter = new Thread(() -> {
-
             lock.lock();
             try {
                 while (!predicate.value) { // with addition of a predicate we avoid waiting or signal that will never come
@@ -83,7 +82,6 @@ public class MissedSignals {
                 System.out.println("Interruption happened");
             }
             lock.unlock();
-
         });
 
         public void run() throws InterruptedException {
